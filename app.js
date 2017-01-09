@@ -9,7 +9,7 @@
   TableController.$inject = ["$scope"];
   function TableController($scope) {
     $scope.sortType = 'title';          // set the default sort type
-    $scope.sortReverse = false        // set the default sort order
+    $scope.sortReverse = false;        // set the default sort order
     $scope.searchTitle = '';           // set the default search/filter term
 
 
