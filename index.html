@@ -14,14 +14,14 @@
       <div class="alert alert-info">
         <p>Sort Type: {{ sortType }}</p>
         <p>Sort Reverse: {{ sortReverse }}</p>
-        <p>Search Query: {{ searchFish }}</p>
+        <p>Search Query: {{ searchTitle }}</p>
       </div>
 
       <form>
         <div class="form-group">
           <div class="input-group">
             <div class="input-group-addon"><i class="fa fa-search"></i></div>
-            <input ng-model="searchFish" type="text" class="form-control" placeholder="Search da Fish">
+            <input ng-model="searchTitle" type="text" class="form-control" placeholder="Search Title">
           </div>
         </div>
       </form>
@@ -30,29 +30,29 @@
         <!-- Table head -->
         <thead>
           <tr>
-            <td><a href="#" ng-click=" sortType = 'name'; sortReverse = !sortReverse ">
-              Sushi Roll
-              <span ng-show=" sortType == 'name' && !sortReverse " class="fa fa-caret-down"></span>
-              <span ng-show=" sortType == 'name' && sortReverse " class="fa fa-caret-up"></span>
+            <td><a href="#" ng-click=" sortType = 'title'; sortReverse = !sortReverse ">
+              Title
+              <span ng-show=" sortType == 'title' && !sortReverse " class="fa fa-caret-down"></span>
+              <span ng-show=" sortType == 'title' && sortReverse " class="fa fa-caret-up"></span>
             </a></td>
-            <td><a href="#" ng-click=" sortType = 'fish'; sortReverse = !sortReverse ">
-              Fish Type
-              <span ng-show=" sortType == 'fish' && !sortReverse " class="fa fa-caret-down"></span>
-              <span ng-show=" sortType == 'fish' && sortReverse " class="fa fa-caret-up"></span>
+            <td><a href="#" ng-click=" sortType = 'length'; sortReverse = !sortReverse ">
+              Length
+              <span ng-show=" sortType == 'length' && !sortReverse " class="fa fa-caret-down"></span>
+              <span ng-show=" sortType == 'length' && sortReverse " class="fa fa-caret-up"></span>
             </a></td>
-            <td><a href="#" ng-click=" sortType = 'tastiness'; sortReverse = !sortReverse ">
-              Taste Level
-              <span ng-show=" sortType == 'tastiness' && !sortReverse " class="fa fa-caret-down"></span>
-              <span ng-show=" sortType == 'tastiness' && sortReverse " class="fa fa-caret-up"></span>
+            <td><a href="#" ng-click=" sortType = 'month'; sortReverse = !sortReverse ">
+              Month
+              <span ng-show=" sortType == 'month' && !sortReverse " class="fa fa-caret-down"></span>
+              <span ng-show=" sortType == 'month' && sortReverse " class="fa fa-caret-up"></span>
             </a></td>
           </tr>
         </thead>
         <!-- Table body -->
         <tbody>
-          <tr ng-repeat="roll in sushi | orderBy:sortType:sortReverse | filter:searchFish ">
-            <td>{{ roll.name }}</td>
-            <td>{{ roll.fish }}</td>
-            <td>{{ roll.tastiness }}</td>
+          <tr ng-repeat="title in titles | orderBy:sortType:sortReverse | filter:searchTitle ">
+            <td>{{ title.title }}</td>
+            <td>{{ title.length }}</td>
+            <td>{{ title.month }}</td>
           </tr>
         </tbody>
       </table>
